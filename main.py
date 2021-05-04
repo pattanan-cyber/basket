@@ -10,7 +10,7 @@ from consts import *
 class SlowFruit(Sprite):
     def __init__(self, app, x, y):
         super().__init__(app, 'images/apple.png', x, y)
-
+        self.score += 1
         self.app = app
 
     def update(self):
@@ -23,7 +23,7 @@ class SlowFruit(Sprite):
 class FastFruit(Sprite):
     def __init__(self, app, x, y):
         super().__init__(app, 'images/banana.png', x, y)
-
+        self.score += 2
         self.app = app
 
     def update(self):
@@ -36,7 +36,7 @@ class FastFruit(Sprite):
 class SlideFruit(Sprite):
     def __init__(self, app, x, y):
         super().__init__(app, 'images/cherry.png', x, y)
-
+        self.score += 3
         self.app = app
         self.direction = randint(0,1)*2 - 1
 
@@ -51,7 +51,7 @@ class SlideFruit(Sprite):
 class CurvyFruit(Sprite):
     def __init__(self, app, x, y):
         super().__init__(app, 'images/pear.png', x, y)
-
+        self.score += 4
         self.app = app
         self.t = randint(0,360) * 2 * math.pi / 360
 
