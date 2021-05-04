@@ -78,11 +78,15 @@ class Basket(Sprite):
         elif self.direction == BASKET_RIGHT:
             if self.x <= CANVAS_WIDTH - BASKET_MARGIN:
                 self.x += BASKET_SPEED
+        if self.x > CANVAS_WIDTH:
+            self.x == -CANVAS_WIDTH
+        if self.x < CANVAS_WIDTH:
+            self.x == CANVAS_WIDTH-CANVAS_WIDTH
 
     def check_collision(self, fruit):
         if self.distance_to(fruit) <= BASKET_CATCH_DISTANCE:
             fruit.to_be_deleted = True
-            self.app.score += 1
+            self.app.score += 2
             self.app.update_score()
 
 
